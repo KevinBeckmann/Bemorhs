@@ -121,16 +121,24 @@ html {
     width: 100vw;
 } 
 body {
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    font-family: var(--font-main);
-    min-height: 100vh;
-    /* bolinhas removidas: mantive apenas o gradiente para efeito sutil */
-    background-image: radial-gradient(circle at 50% 0%, #0314c8 0%, transparent 65%);
-    background-size: cover;
-    width: 100vw;
-    overflow-x: hidden;
+  /* fallback caso a imagem não carregue */
+  background-color: var(--bg-body);
+
+  /* cor do texto principal */
+  color: var(--text-main);
+
+  font-family: var(--font-main);
+  min-height: 100vh;
+
+  /* gradient uniforme (substitua as cores pelo hex que preferir) */
+  background-image: linear-gradient(90deg, #0317cc 0%, #f7f8ff 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 100vw;
+  overflow-x: hidden;
 }
+
 img { max-width: 100%; height: auto; }
 
 header {
@@ -184,7 +192,7 @@ header.hidden { transform: translateY(-100%); }
     font-weight: 900;
     color: var(--primary);
     margin: 0;
-    text-shadow: 0 1px 3px rgba(31, 48, 79, 0.12); /* menos neon, mais sutil */
+    text-shadow: 0 1px 3px rgba(31,79,51,0.12); /* menos neon, mais sutil */
     letter-spacing: -1px;
 }
 .logo-subtitle {
@@ -213,7 +221,7 @@ header.hidden { transform: translateY(-100%); }
     justify-content: center;
     width: 100%;
 }
-.category-btn:hover, .category-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(47, 57, 110, 0.08); }
+.category-btn:hover, .category-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(47,110,70,0.08); }
 .controls-bar {
     display: flex;
     flex-direction: row;
@@ -242,7 +250,7 @@ header.hidden { transform: translateY(-100%); }
     font-size: 0.95rem;
     white-space: nowrap;
 }
-.nav-btn:hover, .nav-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(0, 41, 176, 0.08); }
+.nav-btn:hover, .nav-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(47,110,70,0.08); }
 .search-box {
     display: flex;
     align-items: center;
@@ -434,7 +442,7 @@ checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
     .logo-img { height: 3.6rem; }
     .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 5px 0; }
     .category-btn { padding: 8px; font-size: 0.9rem; }
-    .controls-bar { gap: 8px; }
+    .controls-bar { gap: 8px; }z
     .search-box input { width: 100%; }
     .products-container { grid-template-columns: 1fr; gap: 8px;}
     .card { padding: 8px; }
@@ -444,10 +452,36 @@ checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
 .card .price {
   color: #ffffff;
   text-shadow:
-    0 1px 0 rgba(0, 41, 246, 0.85),  /* highlight superior */
-    0 -1px 0 rgba(3, 31, 131, 0.06);       /* sombra interna inferior */
+    0 1px 0 rgba(255,255,255,0.85),  /* highlight superior */
+    0 -1px 0 rgba(0,0,0,0.06);       /* sombra interna inferior */
 } 
- </style>
+
+ /* faz o subtítulo ficar abaixo da logo e centralizado em telas pequenas */
+@media (max-width: 600px) {
+  .logo-and-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centraliza a logo e o texto no eixo cruzado */
+    text-align: center;    /* centraliza o texto dentro do container */
+    gap: 6px;              /* espaço entre logo e textos */
+  }
+
+  .text-container {
+    align-items: center;   /* centraliza os elementos internos (título e subtítulo) */
+  }
+
+  .logo-subtitle {
+    margin-top: 0;
+    font-size: 0.85rem;    /* ajuste opcional do tamanho para mobile */
+     color: rgba(0,0,0,0.72);
+  }
+
+  /* se quiser ajustar a altura da imagem no mobile */
+  .logo-img {
+    height: 4.2rem; /* ajuste opcional */
+    object-fit: contain;
+  }
+}</style>
 </head>
 <body>
 
