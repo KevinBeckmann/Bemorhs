@@ -272,7 +272,7 @@ header.hidden { transform: translateY(-100%); }
     padding: 25px;
     height: fit-content;
     border: 1px solid #222;
-    box-shadow: 0 10px 30px rgba(47,110,70,0.04);
+    box-shadow: 0 10px 30px rgba(47, 70, 110, 0.04);
     position: sticky;
     top: 120px;
 }
@@ -283,7 +283,7 @@ header.hidden { transform: translateY(-100%); }
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #2cd76b;
+    background: #2c3ad7;
     color: #000;
     border: none;
     box-shadow: 0 10px 20px rgba(0,0,0,0.35);
@@ -325,7 +325,7 @@ header.hidden { transform: translateY(-100%); }
 .promo-mobile .promo-carousel { display: block !important;}
 .section-header { margin-bottom: 20px; font-size: 1.3rem; font-weight: 600; color: #fff; display: flex; justify-content: space-between; align-items: center;}
 .products-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;}
-.card { border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.2s; background-color: #1e2126; color: #fff; border: 1px solid #222;}
+.card { border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.2s; background-color: var(--card-bg); color: var(--text-main); border: 1px solid #e6e6e6;}
 .card:hover { transform: translateY(-5px); border-color: var(--primary);}
 .card.featured { grid-column: span 2; background-color: #e3e3e3; color: #000;}
 .card.featured .card-title { font-size: 1.4rem;}
@@ -341,13 +341,13 @@ header.hidden { transform: translateY(-100%); }
 .checkout-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.91); z-index: 2000; justify-content: center; align-items: flex-start; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px;}
 .checkout-modal.active { display: flex;}
 .checkout-content { background: var(--card-bg); border-radius: 20px; padding: 30px; max-width: 500px; width: 100%; border: 1px solid var(--primary); box-shadow: 0 8px 30px rgba(47,110,70, 0.09); max-height: calc(100vh - 64px); overflow-y: auto; -webkit-overflow-scrolling: touch;}
-checkout-content h2 { color: var(--primary); margin-bottom: 20px; text-align: center;}
+.checkout-content h2 { color: var(--primary); margin-bottom: 20px; text-align: center;}
 .form-group { margin-bottom: 15px;}
 .form-group label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #ccc;}
 .form-group input, .form-group select {
     width: 100%; padding: 10px; border: 1px solid #333; border-radius: 8px; background: #0b0c10; color: white; font-size: 1rem;
 }
-checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
+.checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
 .checkout-buttons button { flex: 1; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold;}
 .btn-cancel { background: #333; color: #fff;}
 .btn-confirm { background: var(--primary); color: var(--primary-contrast);}
@@ -442,18 +442,17 @@ checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
     .logo-img { height: 3.6rem; }
     .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 5px 0; }
     .category-btn { padding: 8px; font-size: 0.9rem; }
-    .controls-bar { gap: 8px; }z
+    .controls-bar { gap: 8px; }
     .search-box input { width: 100%; }
     .products-container { grid-template-columns: 1fr; gap: 8px;}
     .card { padding: 8px; }
     .card-img { height: 120px; }
     
 }  
+
 .card .price {
-  color: #ffffff;
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.85),  /* highlight superior */
-    0 -1px 0 rgba(0,0,0,0.06);       /* sombra interna inferior */
+  color: #000000;
+   
 } 
 
  /* faz o subtítulo ficar abaixo da logo e centralizado em telas pequenas */
@@ -481,6 +480,7 @@ checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
     height: 4.2rem; /* ajuste opcional */
     object-fit: contain;
   }
+
 }</style>
 </head>
 <body>
