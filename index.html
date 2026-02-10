@@ -104,36 +104,37 @@
    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
 :root {
     /* paleta metalizada */
-    --primary: #2f6e46;          /* cor principal (mid) */
-    --primary-dark: #1f4f33;     /* base escura */
-    --primary-light: #9de6b0;    /* brilho/realce */
-    --primary-contrast: #ecfff6; /* texto claro para contraste */
-    --bg-body: #000000;
-    --card-bg: #1a1c20;
-    --text-main: #ffffff;
-    --text-muted: #a1a1a1;
+    --primary: #0037ff;          /* cor principal (mid) */
+    --primary-dark: #132afb;     /* base escura */
+    --primary-light: #071de4;    /* brilho/realce */
+    --primary-contrast: #ffffff; /* texto claro para contraste */
+    --bg-body: #ffffff;
+    --card-bg: #ffffff;
+    --text-main: #000000;
+    --text-muted: #fffefe;
     --font-main: 'Inter', sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html {
-    color-scheme: dark;
+    color-scheme: light;
     overflow-x: hidden;
     width: 100vw;
-}
+} 
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
     font-family: var(--font-main);
     min-height: 100vh;
-    background-image: radial-gradient(circle at 50% 0%, #004d33 0%, transparent 65%), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm25 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm25 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm25 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z' fill='%23000000' fill-opacity='0.05'%3E%3C/path%3E%3C/svg%3E");
-    background-size: cover, 400px 400px;
+    /* bolinhas removidas: mantive apenas o gradiente para efeito sutil */
+    background-image: radial-gradient(circle at 50% 0%, #1e2253 0%, transparent 65%);
+    background-size: cover;
     width: 100vw;
     overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; }
 
 header {
-    background: rgba(0, 0, 0, 0.96);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #222;
     padding: 0;
@@ -141,7 +142,7 @@ header {
     top: 0;
     z-index: 100;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(47,110,70,0.06); /* sombra suave metal */
+    box-shadow: 0 4px 8px rgba(53, 47, 110, 0.06); /* sombra suave metal */
     width: 100%;
 }
 header.hidden { transform: translateY(-100%); }
@@ -189,7 +190,7 @@ header.hidden { transform: translateY(-100%); }
 .logo-subtitle {
     font-size: .85rem;
     font-weight: 400;
-    color: #ccc;
+    color: #000000;
 }
 .mobile-category-icons {
     display: none;
@@ -201,7 +202,7 @@ header.hidden { transform: translateY(-100%); }
 .category-btn {
     background: rgba(255,255,255,0.02);
     border: 1px solid #333;
-    color: #ccc;
+    color: #000000;
     padding: 12px;
     border-radius: 8px;
     cursor: pointer;
@@ -233,7 +234,7 @@ header.hidden { transform: translateY(-100%); }
 .nav-btn {
     background: rgba(255,255,255,0.02);
     border: 1px solid #333;
-    color: #ccc;
+    color: #000000;
     padding: 7px 12px;
     border-radius: 8px;
     cursor: pointer;
@@ -274,7 +275,7 @@ header.hidden { transform: translateY(-100%); }
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #25D366;
+    background: #2cd76b;
     color: #000;
     border: none;
     box-shadow: 0 10px 20px rgba(0,0,0,0.35);
@@ -332,13 +333,13 @@ header.hidden { transform: translateY(-100%); }
 .checkout-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.91); z-index: 2000; justify-content: center; align-items: flex-start; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px;}
 .checkout-modal.active { display: flex;}
 .checkout-content { background: var(--card-bg); border-radius: 20px; padding: 30px; max-width: 500px; width: 100%; border: 1px solid var(--primary); box-shadow: 0 8px 30px rgba(47,110,70, 0.09); max-height: calc(100vh - 64px); overflow-y: auto; -webkit-overflow-scrolling: touch;}
-.checkout-content h2 { color: var(--primary); margin-bottom: 20px; text-align: center;}
+checkout-content h2 { color: var(--primary); margin-bottom: 20px; text-align: center;}
 .form-group { margin-bottom: 15px;}
 .form-group label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #ccc;}
 .form-group input, .form-group select {
     width: 100%; padding: 10px; border: 1px solid #333; border-radius: 8px; background: #0b0c10; color: white; font-size: 1rem;
 }
-.checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
+checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
 .checkout-buttons button { flex: 1; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold;}
 .btn-cancel { background: #333; color: #fff;}
 .btn-confirm { background: var(--primary); color: var(--primary-contrast);}
@@ -438,49 +439,15 @@ header.hidden { transform: translateY(-100%); }
     .products-container { grid-template-columns: 1fr; gap: 8px;}
     .card { padding: 8px; }
     .card-img { height: 120px; }
-}
-
-@media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3),
-       (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
-       (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3),
-       (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2),
-       (device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3),
-       (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)
-{
-    .layout-grid, .checkout-content, .main, .products-container, body, html {
-        padding: 0 !important;
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
-    }
-    .products-container { grid-template-columns: 1fr; gap: 6px;}
-    .card { padding: 6px; }
-    .btn-add { padding: 6px 10px; font-size: 0.75rem; }
-    .price { font-size: 1rem; }
-    .card-img { height: 110px; }
-    .card-title { font-size: 0.9rem; }
-    .card-desc { font-size: 0.8rem; }
-    .section-header { font-size: 1rem; text-align: center; padding: 0 5px; margin: 20px 15px 20px 15px; }
-}
-
-input, select, button, textarea, label { touch-action: manipulation; }
-
-/* ---------------------------------------------------------
-   Regra adicionada: esconder apenas a imagem da logo dentro
-   dos cards de produto (procura por "logo" em src ou alt).
-   Isso mantém o card e textos, apenas remove a imagem.
-   --------------------------------------------------------- */
-.products-container .card img[src*="logo" i],
-.products-container .card .card-img img[src*="logo" i],
-.products-container .card .card-img[src*="logo" i],
-.products-container .card .card-img[alt*="logo" i],
-.products-container .card .card-img img[alt*="logo" i] {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    visibility: hidden !important;
-}</style>
+    
+}  
+.card .price {
+  color: #ffffff;
+  text-shadow:
+    0 1px 0 rgba(0, 41, 246, 0.85),  /* highlight superior */
+    0 -1px 0 rgba(3, 31, 131, 0.06);       /* sombra interna inferior */
+} 
+ </style>
 </head>
 <body>
 
