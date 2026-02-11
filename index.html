@@ -432,18 +432,19 @@ header.hidden { transform: translateY(-100%); }
     .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
     .category-btn { padding: 10px; font-size: 1rem; }
 
-    /* Adicione estas linhas para uniformizar os cards não destacados em telas pequenas (até iPhone 11 ~414px e iPhone 12 mini ~375px) */
+    /* Regras ajustadas para altura fixa e uniforme nos cards não destacados, independente do conteúdo */
     .products-container {
-        align-items: stretch; /* Estica os cards para ocupar o espaço vertical uniformemente */
+        align-items: stretch; /* Mantém o esticamento vertical */
     }
     .card {
-        min-height: 320px; /* Altura mínima para garantir uniformidade entre cards não destacados. Ajuste conforme necessário (ex.: 300px se for muito alto). */
+        height: 320px; /* Altura fixa para garantir uniformidade absoluta, independente do conteúdo */
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Distribui o conteúdo (título, desc, footer) para ocupar o espaço */
+        justify-content: space-between; /* Distribui o conteúdo interno */
+        overflow: hidden; /* Corta conteúdo que exceda a altura, garantindo uniformidade */
     }
     .card.featured {
-        /* Opcional: Se quiser que destacados também sejam uniformes, adicione min-height aqui também. Caso contrário, deixe como está para eles serem maiores. */
+        /* Cards destacados não têm altura fixa forçada, permitindo variar */
     }
 }
 
