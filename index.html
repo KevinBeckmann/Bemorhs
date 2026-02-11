@@ -481,6 +481,35 @@ header.hidden { transform: translateY(-100%); }
     object-fit: contain;
   }
 
+}
+   @media (max-width: 900px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .card {
+    min-height: 340px;   /* ajuste conforme seu card médio real */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* força conteúdos inferior/central a colarem base/topo */
+    align-items: stretch;
+    background: #23272f; /* exemplo escuro, ajuste como desejar */
+  }
+}
+@media (max-width: 600px) {
+  .products-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card {
+    min-height: 310px;  /* pode ajustar para menos em telas menores */
+  }
+}
+@media (max-width: 420px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
 }</style>
 </head>
 <body>
