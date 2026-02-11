@@ -433,19 +433,25 @@ header.hidden { transform: translateY(-100%); }
     .category-btn { padding: 10px; font-size: 1rem; }
 
     /* Regras ajustadas para altura fixa e uniforme nos cards não destacados, independente do conteúdo */
-    .products-container {
-        align-items: stretch; /* Mantém o esticamento vertical */
-    }
-    .card {
-        height: 320px; /* Altura fixa para garantir uniformidade absoluta, independente do conteúdo */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Distribui o conteúdo interno */
-        overflow: hidden; /* Corta conteúdo que exceda a altura, garantindo uniformidade */
-    }
-    .card.featured {
-        /* Cards destacados não têm altura fixa forçada, permitindo variar */
-    }
+   /* Uniformizar apenas cards NÃO destacados */
+.products-container {
+    align-items: stretch;
+}
+
+.card:not(.featured) {
+    min-height: 340px; /* altura mínima uniforme */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:not(.featured) .card-title {
+    min-height: 44px; /* garante que nomes maiores não quebrem o layout */
+}
+
+.card:not(.featured) .card-footer {
+    margin-top: auto; /* força preço e botão ficarem sempre alinhados embaixo */
+}
+
 }
 
 @media (max-width: 420px) {
