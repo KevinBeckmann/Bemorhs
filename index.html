@@ -480,6 +480,29 @@ header.hidden { transform: translateY(-100%); }
     height: 4.2rem; /* ajuste opcional */
     object-fit: contain;
   }
+    @media (max-width: 900px) {
+  /* Garantir que o grid tenha 1 coluna no mobile (cada card mesma largura de coluna) */
+  .products-container {
+    grid-template-columns: 1fr !important;
+    grid-auto-columns: 1fr !important;
+  }
+
+  /* Somente para cards NÃO destacados: forçar ocupar 100% da coluna e evitar spans */
+  .card:not(.featured) {
+    grid-column: auto !important;      /* evita que herdem span/coluna maior */
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    align-self: stretch !important;
+  }
+
+  /* Caso haja regras internas que mudem padding/margens para featured, normalizamos só os não-featured */
+  .card:not(.featured) .card-img {
+    max-height: 160px; /* opcional: ajustar altura da imagem para consistência visual */
+    object-fit: contain;
+  }
+}
 
 }</style>
 </head>
