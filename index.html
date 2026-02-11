@@ -414,6 +414,20 @@ header.hidden { transform: translateY(-100%); }
     .header-flex { margin-bottom: 6px; min-height: 80px; }
     .controls-bar { margin-top: 4px; }
     .admin-link { display: block; margin: 20px 0; text-align: center; font-size: 0.7rem; }
+
+    /* Adicione estas linhas para uniformizar os cards não destacados */
+    .products-container {
+        align-items: stretch; /* Estica os cards para ocupar o espaço vertical uniformemente */
+    }
+    .card {
+        min-height: 320px; /* Altura mínima para garantir uniformidade entre cards não destacados. Ajuste conforme necessário (ex.: 300px se for muito alto). */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribui o conteúdo (título, desc, footer) para ocupar o espaço */
+    }
+    .card.featured {
+        /* Opcional: Se quiser que destacados também sejam uniformes, adicione min-height aqui também. Caso contrário, deixe como está para eles serem maiores. */
+    }
 }
 
 @media (max-width: 600px) {
@@ -481,6 +495,7 @@ header.hidden { transform: translateY(-100%); }
     object-fit: contain;
   }
 
+}
 }</style>
 </head>
 <body>
