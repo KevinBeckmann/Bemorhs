@@ -432,25 +432,16 @@ header.hidden { transform: translateY(-100%); }
     .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
     .category-btn { padding: 10px; font-size: 1rem; }
 
-    /* Regras ajustadas para altura fixa e uniforme nos cards não destacados, independente do conteúdo */
-   /* Uniformizar apenas cards NÃO destacados */
-.products-container {
-    align-items: stretch;
-}
-
 .card:not(.featured) {
-    min-height: 340px; /* altura mínima uniforme */
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+    .card.featured {
+    grid-column: span 1 !important;
 }
 
-.card:not(.featured) .card-title {
-    min-height: 44px; /* garante que nomes maiores não quebrem o layout */
-}
 
-.card:not(.featured) .card-footer {
-    margin-top: auto; /* força preço e botão ficarem sempre alinhados embaixo */
-}
 
 }
 
