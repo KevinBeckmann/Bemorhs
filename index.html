@@ -431,6 +431,20 @@ header.hidden { transform: translateY(-100%); }
     .logo-subtitle { font-size: 0.8rem; }
     .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
     .category-btn { padding: 10px; font-size: 1rem; }
+
+    /* Adicione estas linhas para uniformizar os cards não destacados em telas pequenas (até iPhone 11 ~414px e iPhone 12 mini ~375px) */
+    .products-container {
+        align-items: stretch; /* Estica os cards para ocupar o espaço vertical uniformemente */
+    }
+    .card {
+        min-height: 320px; /* Altura mínima para garantir uniformidade entre cards não destacados. Ajuste conforme necessário (ex.: 300px se for muito alto). */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribui o conteúdo (título, desc, footer) para ocupar o espaço */
+    }
+    .card.featured {
+        /* Opcional: Se quiser que destacados também sejam uniformes, adicione min-height aqui também. Caso contrário, deixe como está para eles serem maiores. */
+    }
 }
 
 @media (max-width: 420px) {
@@ -447,20 +461,6 @@ header.hidden { transform: translateY(-100%); }
     .products-container { grid-template-columns: 1fr; gap: 8px;}
     .card { padding: 8px; }
     .card-img { height: 120px; }
-
-    /* Adicione estas linhas para uniformizar os cards não destacados apenas em telas pequenas (até iPhone 12 mini ~375px) */
-    .products-container {
-        align-items: stretch; /* Estica os cards para ocupar o espaço vertical uniformemente */
-    }
-    .card {
-        min-height: 320px; /* Altura mínima para garantir uniformidade entre cards não destacados. Ajuste conforme necessário (ex.: 300px se for muito alto). */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Distribui o conteúdo (título, desc, footer) para ocupar o espaço */
-    }
-    .card.featured {
-        /* Opcional: Se quiser que destacados também sejam uniformes, adicione min-height aqui também. Caso contrário, deixe como está para eles serem maiores. */
-    }
     
 }  
 
@@ -495,7 +495,7 @@ header.hidden { transform: translateY(-100%); }
     object-fit: contain;
   }
 
-}
+
 }</style>
 </head>
 <body>
