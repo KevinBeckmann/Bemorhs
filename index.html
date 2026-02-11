@@ -101,7 +101,7 @@
     </script>
 
 
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+   <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
 :root {
     /* paleta metalizada */
     --primary: #0037ff;          /* cor principal (mid) */
@@ -261,7 +261,7 @@ header.hidden { transform: translateY(-100%); }
     margin-left: 10px;
 }
 .search-box input { background: transparent; border: none; color: #fff; outline: none; margin-left: 7px; width: 140px;}
-.btn-schedule { background-color: var(--primary); color: var(--primary-contrast); font-weight: 700; padding: 7px 13px; border-radius: 7px; border: none; cursor: pointer; text-transform: uppercase; fon[...]
+.btn-schedule { background-color: var(--primary); color: var(--primary-contrast); font-weight: 700; padding: 7px 13px; border-radius: 7px; border: none; cursor: pointer; text-transform: uppercase; font-size: 0.9rem; box-shadow: 0 6px 14px rgba(47,110,70, 0.06); white-space: nowrap; }
 
 .admin-link { display: none; color: #fff; text-decoration: none; }
 
@@ -315,7 +315,7 @@ header.hidden { transform: translateY(-100%); }
 .qty-btn { background: none; border: none; color: #fff; cursor: pointer; font-size: 12px; padding: 2px 5px; }
 .btn-remove { background: none; border: none; color: #ff5555; cursor: pointer; font-size: 0.8rem; margin-left: 5px; }
 .cart-total-row { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 15px; border-top: 1px solid #222; font-weight: bold; font-size: 1.1rem;}
-.btn-checkout { width: 100%; background-color: var(--primary); color: var(--primary-contrast); font-weight: 700; padding: 14px; border-radius: 8px; border: none; margin-top: 15px; cursor: pointer; tex[...]
+.btn-checkout { width: 100%; background-color: var(--primary); color: var(--primary-contrast); font-weight: 700; padding: 14px; border-radius: 8px; border: none; margin-top: 15px; cursor: pointer; text-transform: uppercase; font-size: 0.9rem; transition: 0.2s;}
 .btn-checkout:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(47,110,70,0.08); }
 .promo-carousel { margin-top: 20px; border-radius: 16px; overflow: hidden; height: 180px; position: relative; border: 1px solid #222; box-shadow: 0 5px 15px rgba(47,110,70,0.06);}
 .promo-slides { display: flex; width: 600%; animation: slide 25s linear infinite;}
@@ -325,7 +325,7 @@ header.hidden { transform: translateY(-100%); }
 .promo-mobile .promo-carousel { display: block !important;}
 .section-header { margin-bottom: 20px; font-size: 1.3rem; font-weight: 600; color: #fff; display: flex; justify-content: space-between; align-items: center;}
 .products-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;}
-.card { border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.2s; background-color: var(--card-bg); col[...]
+.card { border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.2s; background-color: var(--card-bg); color: var(--text-main); border: 1px solid #e6e6e6;}
 .card:hover { transform: translateY(-5px); border-color: var(--primary);}
 .card.featured { grid-column: span 2; background-color: #e3e3e3; color: #000;}
 .card.featured .card-title { font-size: 1.4rem;}
@@ -336,11 +336,11 @@ header.hidden { transform: translateY(-100%); }
 .card-desc { font-size: 0.85rem; opacity: 0.7; margin-bottom: 15px;}
 .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; gap: 12px;}
 .price { font-size: 1.2rem; font-weight: 800; color: var(--primary); min-width: 80px; text-align: left;}
-.btn-add { background-color: var(--primary); color: var(--primary-contrast); border: none; padding: 8px 18px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: 0.2s[...]
+.btn-add { background-color: var(--primary); color: var(--primary-contrast); border: none; padding: 8px 18px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: 0.2s; flex-shrink: 0;}
 .btn-add:active { transform: scale(0.95); }
-.checkout-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.91); z-index: 2000; justify-content: center; align-items: flex-start; overflow-y: auto;[...]
+.checkout-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.91); z-index: 2000; justify-content: center; align-items: flex-start; overflow-y: auto; overscroll-behavior: contain; padding: 24px 20px;}
 .checkout-modal.active { display: flex;}
-.checkout-content { background: var(--card-bg); border-radius: 20px; padding: 30px; max-width: 500px; width: 100%; border: 1px solid var(--primary); box-shadow: 0 8px 30px rgba(47,110,70, 0.09); max-h[...]
+.checkout-content { background: var(--card-bg); border-radius: 20px; padding: 30px; max-width: 500px; width: 100%; border: 1px solid var(--primary); box-shadow: 0 8px 30px rgba(47,110,70, 0.09); max-height: calc(100vh - 64px); overflow-y: auto; -webkit-overflow-scrolling: touch;}
 .checkout-content h2 { color: var(--primary); margin-bottom: 20px; text-align: center;}
 .form-group { margin-bottom: 15px;}
 .form-group label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #ccc;}
@@ -355,7 +355,7 @@ header.hidden { transform: translateY(-100%); }
 .payment-details h3 { font-size: 1rem; margin-bottom: 10px; color: var(--primary);}
 .pix-code { background: #0b0c10; border: 1px solid #333; border-radius: 8px; padding: 10px; font-size: 0.85rem; word-break: break-all; color: #e6e6e6; max-height: 140px; overflow: auto;}
 .pix-actions { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;}
-.pix-actions button, .payment-link { background: var(--primary); color: var(--primary-contrast); border: none; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; text-decoratio[...]
+.pix-actions button, .payment-link { background: var(--primary); color: var(--primary-contrast); border: none; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center;}
 .payment-qr { display: flex; justify-content: center; margin-top: 12px;}
 .payment-qr img { width: 100%; max-width: 220px; height: auto; border-radius: 8px; border: 1px solid #333; }
 
@@ -480,6 +480,7 @@ header.hidden { transform: translateY(-100%); }
     height: 4.2rem; /* ajuste opcional */
     object-fit: contain;
   }
+
 }</style>
 </head>
 <body>
