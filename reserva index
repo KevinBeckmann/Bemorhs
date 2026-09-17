@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+      <!-- Carregar Michroma via Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+<!-- inserir no <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+<!-- (Opcional) alternativa via Fontsource CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/michroma/index.css">
+    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="color-scheme" content="dark">
-    <title>iPlay Store - Tech Edition Funcional</title>
+    <title>BEMORH</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <!-- Firebase SDK -->
@@ -131,7 +140,7 @@ body {
   min-height: 100vh;
 
   /* gradient uniforme (substitua as cores pelo hex que preferir) */
-  background-image: linear-gradient(90deg, #0317cc 0%, #f7f8ff 100%);
+  background-image: linear-gradient(90deg, #0b0b0c 0%, #f7f8ff 100%);
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -194,6 +203,7 @@ header.hidden { transform: translateY(-100%); }
     margin: 0;
     text-shadow: 0 1px 3px rgba(31,79,51,0.12); /* menos neon, mais sutil */
     letter-spacing: -1px;
+     font-family: 'Michroma', sans-serif;
 }
 .logo-subtitle {
     font-size: .85rem;
@@ -343,16 +353,23 @@ header.hidden { transform: translateY(-100%); }
 .checkout-content { background: var(--card-bg); border-radius: 20px; padding: 30px; max-width: 500px; width: 100%; border: 1px solid var(--primary); box-shadow: 0 8px 30px rgba(47,110,70, 0.09); max-height: calc(100vh - 64px); overflow-y: auto; -webkit-overflow-scrolling: touch;}
 .checkout-content h2 { color: var(--primary); margin-bottom: 20px; text-align: center;}
 .form-group { margin-bottom: 15px;}
-.form-group label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #ccc;}
+.form-group label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #000000;}
 .form-group input, .form-group select {
-    width: 100%; padding: 10px; border: 1px solid #333; border-radius: 8px; background: #0b0c10; color: white; font-size: 1rem;
+    width: 100%; padding: 10px; border: 1px solid #f9f9f9; border-radius: 8px; background: #edeef1; color: white; font-size: 1rem;
 }
 .checkout-buttons { display: flex; gap: 10px; margin-top: 20px;}
 .checkout-buttons button { flex: 1; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold;}
 .btn-cancel { background: #333; color: #fff;}
 .btn-confirm { background: var(--primary); color: var(--primary-contrast);}
-.payment-details { margin-top: 15px; background: rgba(255,255,255,0.04); border: 1px solid #222; border-radius: 12px; padding: 15px;}
-.payment-details h3 { font-size: 1rem; margin-bottom: 10px; color: var(--primary);}
+.payment-details {
+    background: #fcfdfe;         /* NOVA cor de fundo */
+    border: 1px solid #feffff;   /* NOVA borda */
+    color: #000000;                 /* cor padrão do texto */
+}
+
+.payment-details h3 {
+    color: #000000;             /* NOVA cor do título/ícone */
+}
 .pix-code { background: #0b0c10; border: 1px solid #333; border-radius: 8px; padding: 10px; font-size: 0.85rem; word-break: break-all; color: #e6e6e6; max-height: 140px; overflow: auto;}
 .pix-actions { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;}
 .pix-actions button, .payment-link { background: var(--primary); color: var(--primary-contrast); border: none; padding: 10px 12px; border-radius: 8px; cursor: pointer; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center;}
@@ -1138,10 +1155,8 @@ header.hidden { transform: translateY(-100%); }
                     <h3><i class="fas fa-credit-card"></i> Pagamento Seguro</h3>
                     <p style="margin-bottom:10px; color:#ccc;">
                         Você será redirecionado para o Mercado Pago.
-                        <br>Lá você pode escolher pagar com:
-                        <br>✅ <strong>Pix (com QR Code Dinâmico)</strong>
-                        <br>✅ <strong>Cartão de Crédito</strong>
-                        <br>✅ <strong>Boleto</strong>
+                        <br>
+                       
                     </p>
                     <div style="background: rgba(0,255,157,0.1); padding: 10px; border-radius: 8px; border: 1px dashed var(--primary); text-align: center; margin-bottom: 15px;">
                         Valor Total: <strong style="color: var(--primary);">${totalFormatado}</strong>
