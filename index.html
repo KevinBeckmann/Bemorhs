@@ -212,7 +212,7 @@ header.hidden { transform: translateY(-100%); }
 }
 .mobile-category-icons {
     display: none;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 8px;
     padding: 10px 0;
     width: 100%;
@@ -271,6 +271,22 @@ header.hidden { transform: translateY(-100%); }
     margin-left: 10px;
 }
 .search-box input { background: transparent; border: none; color: #fff; outline: none; margin-left: 7px; width: 140px;}
+.subcategory-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+.subcategory-box select {
+    border: none;
+    background: transparent;
+    color: #000;
+    outline: none;
+    min-width: 170px;
+}
 .btn-schedule { background-color: var(--primary); color: var(--primary-contrast); font-weight: 700; padding: 7px 13px; border-radius: 7px; border: none; cursor: pointer; text-transform: uppercase; font-size: 0.9rem; box-shadow: 0 6px 14px rgba(47,110,70, 0.06); white-space: nowrap; }
 
 .admin-link { display: none; color: #fff; text-decoration: none; }
@@ -405,7 +421,7 @@ header.hidden { transform: translateY(-100%); }
 @media (max-width: 900px) {
     body { padding-bottom: 80px; }
     .header-flex { flex-direction: column; align-items: center; min-height: 62px; gap: 12px;}
-    .mobile-category-icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 10px 0; }
+    .mobile-category-icons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 10px 0; }
     .nav-buttons-container { display: none; }
     .logo-img { height: 2.3rem;}
     .logo-title { font-size: 1.3rem;}
@@ -419,6 +435,8 @@ header.hidden { transform: translateY(-100%); }
     .controls-bar { display: grid; grid-template-columns: 1fr auto; gap: 10px; width: 100%; }
     .search-box { margin-left: 0; width: 100%; }
     .search-box input { width: 100%; }
+    .subcategory-box { width: 100%; }
+    .subcategory-box select { min-width: 0; width: 100%; }
     .products-container { grid-template-columns: 1fr; gap: 12px;}
     .card { padding: 12px; }
     .card-img { height: 140px; }
@@ -446,7 +464,7 @@ header.hidden { transform: translateY(-100%); }
     .btn-add { width: auto; }
     .logo-title { font-size: 2.2rem; }
     .logo-subtitle { font-size: 0.8rem; }
-    .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .mobile-category-icons { grid-template-columns: repeat(5, 1fr); gap: 6px; }
     .category-btn { padding: 10px; font-size: 1rem; }
 }
 
@@ -457,7 +475,7 @@ header.hidden { transform: translateY(-100%); }
     .logo-title { font-size: 1.8rem; }
     .logo-subtitle { font-size: 0.7rem; }
     .logo-img { height: 3.6rem; }
-    .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 5px 0; }
+    .mobile-category-icons { grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 5px 0; }
     .category-btn { padding: 8px; font-size: 0.9rem; }
     .controls-bar { gap: 8px; }
     .search-box input { width: 100%; }
@@ -536,29 +554,40 @@ header.hidden { transform: translateY(-100%); }
                     </div>
                 </div>
                 <div class="mobile-category-icons">
-                    <button class="category-btn" onclick="filter('aparelhos', this)" title="Celular">
-                        <i class="fas fa-mobile-alt"></i>
+                    <button class="category-btn" onclick="filter('compressores', this)" title="Compressores">
+                        <i class="fas fa-compress"></i>
                     </button>
-                    <button class="category-btn" onclick="filter('fones', this)" title="Fones">
-                        <i class="fas fa-headphones"></i>
+                    <button class="category-btn" onclick="filter('pistolas', this)" title="Pistolas de Pintura">
+                        <i class="fas fa-spray-can"></i>
                     </button>
-                    <button class="category-btn" onclick="filter('carregadores', this)" title="Carregadores">
-                        <i class="fas fa-charging-station"></i>
+                    <button class="category-btn" onclick="filter('pecas', this)" title="Peças">
+                        <i class="fas fa-cogs"></i>
                     </button>
-                    <button class="category-btn" onclick="filter('aparelhos', this)" title="MacBook">
-                        <i class="fas fa-laptop"></i>
+                    <button class="category-btn" onclick="filter('filtros', this)" title="Filtros de Ar">
+                        <i class="fas fa-filter"></i>
+                    </button>
+                    <button class="category-btn" onclick="filter('mangueiras', this)" title="Mangueiras">
+                        <i class="fas fa-wind"></i>
                     </button>
                 </div>
                 <div class="controls-bar" id="controlsBar">
                     <div class="nav-buttons-container" id="navButtons">
                         <button class="nav-btn active" onclick="filter('all', this)">Todos</button>
-                        <button class="nav-btn" onclick="filter('aparelhos', this)">Compressores</button>
-                        <button class="nav-btn" onclick="filter('carregadores', this)">Pistolas</button>
-                        <button class="nav-btn" onclick="filter('fones', this)">Fones</button>
+                        <button class="nav-btn" onclick="filter('compressores', this)">Compressores</button>
+                        <button class="nav-btn" onclick="filter('pistolas', this)">Pistolas de Pintura</button>
+                        <button class="nav-btn" onclick="filter('pecas', this)">Peças</button>
+                        <button class="nav-btn" onclick="filter('filtros', this)">Filtros de Ar</button>
+                        <button class="nav-btn" onclick="filter('mangueiras', this)">Mangueiras</button>
+                    </div>
+                    <div class="subcategory-box">
+                        <i class="fas fa-sitemap" style="color: #888;"></i>
+                        <select id="subcategoryFilter" onchange="filterBySubcategory(this.value)">
+                            <option value="all">Todas subcategorias</option>
+                        </select>
                     </div>
                     <div class="search-box">
                         <i class="fas fa-search" style="color: #888;"></i>
-                        <input type="text" id="searchInput" placeholder="Buscar produto..." onkeyup="search()">
+                        <input type="text" id="searchInput" placeholder="Buscar produto, categoria ou subcategoria..." onkeyup="search()">
                     </div>
                     <button class="btn-schedule" onclick="toggleCartMobile()">
                         <i class="fas fa-shopping-cart" style="margin-right: 5px;"></i> Cart (<span id="mobileCartCount">0</span>)
@@ -594,7 +623,7 @@ header.hidden { transform: translateY(-100%); }
 
         <main>
             <div class="section-header">
-                <span id="categoryTitle">Catálogo Completo</span>
+                <span id="categoryTitle">Catálogo Pneumático e Pintura</span>
             </div>
 
             <div class="products-container" id="productList"></div>
@@ -765,18 +794,78 @@ header.hidden { transform: translateY(-100%); }
 
         // Default products fallback
         const defaultProdutos = [
-            { id: 1, nome: "iPhone 15 Pro Max", cat: "aparelhos", preco: 8299, desc: "1TB Titanium Natural", img: "https://images.unsplash.com/photo-1695822822491-d92cee704368?w=600&auto=format&fit=crop&q=80", featured: true },
-            { id: 2, nome: "MacBook Pro M3", cat: "aparelhos", preco: 12599, desc: "512GB Space Black", img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" },
-            { id: 3, nome: "MacBook Pro 16\"", cat: "aparelhos", preco: 14999, desc: "1TB Silver M3 Max", img: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=500&q=80" },
-            { id: 4, nome: "AirPods Pro 2", cat: "fones", preco: 1899, desc: "USB-C MagSafe Case", img: "https://images.unsplash.com/photo-1596558450255-7c0b7be9d56a?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-            { id: 5, nome: "Apple Watch Ultra 2", cat: "aparelhos", preco: 6299, desc: "Titanium Case 49mm", img: "https://images.unsplash.com/photo-1549439602-43ebca2327af?auto=format&fit=crop&w=400&q=80" },
-            { id: 6, nome: "Carregador MagSafe", cat: "carregadores", preco: 399, desc: "Original Apple 15W", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80" },
-            { id: 7, nome: "Apple Pencil 2", cat: "aparelhos", preco: 899, desc: "Magnética para iPad", img: "https://images.unsplash.com/photo-1557858310-9052820906f7?auto=format&fit=crop&w=400&q=80" },
-            { id: 8, nome: "HomePod Mini", cat: "aparelhos", preco: 799, desc: "Smart Speaker White", img: "https://images.unsplash.com/photo-1596558450255-7c0b7be9d56a?auto=format&fit=crop&w=400&q=80" }
+            { id: 1, nome: "Compressor de Ar 50L", cat: "compressores", subcat: "pistao", preco: 2899, desc: "2HP monofásico para uso profissional", img: "https://images.unsplash.com/photo-1581093804475-577d72e3f9f7?auto=format&fit=crop&w=700&q=80", featured: true },
+            { id: 2, nome: "Compressor Silencioso 24L", cat: "compressores", subcat: "silencioso", preco: 2199, desc: "Baixo ruído para oficinas e pintura fina", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80" },
+            { id: 3, nome: "Pistola HVLP Bico 1.4mm", cat: "pistolas", subcat: "hvlp", preco: 459, desc: "Acabamento automotivo de alta transferência", img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=700&q=80" },
+            { id: 4, nome: "Pistola de Gravidade 600ml", cat: "pistolas", subcat: "gravidade", preco: 329, desc: "Ideal para primers e esmaltes sintéticos", img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=700&q=80" },
+            { id: 5, nome: "Kit Reparo para Pistola", cat: "pecas", subcat: "reparo", preco: 89, desc: "Agulha, bico e vedações em reposição", img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=700&q=80" },
+            { id: 6, nome: "Conjunto Engate Rápido 1/4", cat: "pecas", subcat: "engates", preco: 75, desc: "Conexão rápida para linha pneumática", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=80" },
+            { id: 7, nome: "Filtro Regulador Lubrificador", cat: "filtros", subcat: "frl", preco: 399, desc: "Bloco FRL com copo metálico e manômetro", img: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=700&q=80" },
+            { id: 8, nome: "Mangueira PU 10m", cat: "mangueiras", subcat: "pu", preco: 149, desc: "Mangueira flexível de poliuretano com terminais", img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=700&q=80" }
         ];
 
         // Initialize with defaultProdutos - will be replaced by Firestore data on load
         let produtos = defaultProdutos;
+        let activeCategory = 'all';
+        let activeSubcategory = 'all';
+
+        const categoryStructure = {
+            compressores: {
+                label: 'Compressores',
+                subcategories: [
+                    { value: 'pistao', label: 'Pistão' },
+                    { value: 'silencioso', label: 'Silencioso' },
+                    { value: 'parafuso', label: 'Parafuso' }
+                ]
+            },
+            pistolas: {
+                label: 'Pistolas de Pintura',
+                subcategories: [
+                    { value: 'hvlp', label: 'HVLP' },
+                    { value: 'gravidade', label: 'Gravidade' },
+                    { value: 'sucção', label: 'Sucção' }
+                ]
+            },
+            pecas: {
+                label: 'Peças',
+                subcategories: [
+                    { value: 'reparo', label: 'Reparo' },
+                    { value: 'engates', label: 'Engates' },
+                    { value: 'valvulas', label: 'Válvulas' }
+                ]
+            },
+            filtros: {
+                label: 'Filtros de Ar',
+                subcategories: [
+                    { value: 'frl', label: 'FRL' },
+                    { value: 'separador', label: 'Separador de Umidade' },
+                    { value: 'elemento', label: 'Elemento Filtrante' }
+                ]
+            },
+            mangueiras: {
+                label: 'Mangueiras',
+                subcategories: [
+                    { value: 'pu', label: 'PU' },
+                    { value: 'borracha', label: 'Borracha' },
+                    { value: 'espiral', label: 'Espiral' }
+                ]
+            }
+        };
+
+        const categoryAliases = {
+            aparelhos: 'compressores',
+            celular: 'compressores',
+            celulares: 'compressores',
+            iphone: 'compressores',
+            macbook: 'compressores',
+            fones: 'pistolas',
+            airpods: 'pistolas',
+            carregadores: 'pecas',
+            eletronicos: 'pecas',
+            eletrônicos: 'pecas',
+            acessorios: 'pecas',
+            acessórios: 'pecas'
+        };
 
         // Global config variables
         let configPagamento = {};
@@ -797,6 +886,117 @@ header.hidden { transform: translateY(-100%); }
         const MODAL_RENDER_DELAY_MS = 100; // Delay to ensure modal is fully rendered
 
         function onlyDigits(s) { return String(s || '').replace(/\D/g, ''); }
+
+        function normalizeText(value) {
+            return String(value || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .trim();
+        }
+
+        function normalizeCategoryValue(value) {
+            const normalized = normalizeText(value).replace(/\s+/g, '');
+            return categoryAliases[normalized] || normalized;
+        }
+
+        function getProductCategory(item) {
+            return normalizeCategoryValue(item.cat || item.categoria || '');
+        }
+
+        function getProductSubcategory(item) {
+            return normalizeCategoryValue(item.subcat || item.subcategoria || item.subcategory || '');
+        }
+
+        function getCategoryLabel(value) {
+            const normalized = normalizeCategoryValue(value);
+            return categoryStructure[normalized]?.label || (normalized ? normalized.charAt(0).toUpperCase() + normalized.slice(1) : 'Todos');
+        }
+
+        function getSubcategoryLabel(value) {
+            const normalized = normalizeCategoryValue(value);
+            if (!normalized || normalized === 'all') return 'Todas subcategorias';
+
+            const allSubcategories = Object.values(categoryStructure).flatMap(group => group.subcategories || []);
+            const matched = allSubcategories.find(sub => normalizeCategoryValue(sub.value) === normalized);
+            return matched?.label || (normalized.charAt(0).toUpperCase() + normalized.slice(1));
+        }
+
+        function updateCategoryTitle() {
+            const title = document.getElementById('categoryTitle');
+            if (activeCategory === 'all' && activeSubcategory === 'all') {
+                title.innerText = "Catálogo Pneumático e Pintura";
+                return;
+            }
+            if (activeCategory !== 'all' && activeSubcategory !== 'all') {
+                title.innerText = `${getCategoryLabel(activeCategory)} • ${getSubcategoryLabel(activeSubcategory)}`;
+                return;
+            }
+            if (activeCategory !== 'all') {
+                title.innerText = getCategoryLabel(activeCategory);
+                return;
+            }
+            title.innerText = getSubcategoryLabel(activeSubcategory);
+        }
+
+        function updateSubcategoryOptions(category) {
+            const select = document.getElementById('subcategoryFilter');
+            if (!select) return;
+
+            const normalizedCategory = normalizeCategoryValue(category);
+            const source = normalizedCategory !== 'all' && categoryStructure[normalizedCategory]
+                ? categoryStructure[normalizedCategory].subcategories
+                : Object.values(categoryStructure).flatMap(group => group.subcategories || []);
+
+            const seen = new Set();
+            const uniqueSubcats = source.filter(sub => {
+                const normalizedValue = normalizeCategoryValue(sub?.value);
+                if (!normalizedValue || seen.has(normalizedValue)) return false;
+                seen.add(normalizedValue);
+                return true;
+            });
+
+            select.innerHTML = `<option value="all">Todas subcategorias</option>${uniqueSubcats
+                .map(sub => `<option value="${normalizeCategoryValue(sub.value)}">${sub.label}</option>`)
+                .join('')}`;
+
+            if (activeSubcategory !== 'all' && seen.has(activeSubcategory)) {
+                select.value = activeSubcategory;
+            } else {
+                activeSubcategory = 'all';
+                select.value = 'all';
+            }
+        }
+
+        function applyFiltersAndRender() {
+            const term = normalizeText(document.getElementById('searchInput')?.value || '');
+            const filtered = produtos.filter(item => {
+                const productCategory = getProductCategory(item);
+                const productSubcategory = getProductSubcategory(item);
+                const categoryMatch = activeCategory === 'all' || productCategory === activeCategory;
+                const subcategoryMatch = activeSubcategory === 'all' || productSubcategory === activeSubcategory;
+
+                if (!categoryMatch || !subcategoryMatch) return false;
+                if (!term) return true;
+
+                const searchable = [
+                    item.nome,
+                    item.desc,
+                    item.cat,
+                    item.categoria,
+                    item.subcat,
+                    item.subcategoria,
+                    item.subcategory,
+                    productCategory,
+                    productSubcategory
+                ].map(normalizeText).join(' ');
+
+                return searchable.includes(term);
+            });
+
+            updateCategoryTitle();
+            renderProdutos(filtered);
+        }
 
         async function getAddressFromCep(cep) {
           const c = onlyDigits(cep);
@@ -1072,25 +1272,18 @@ header.hidden { transform: translateY(-100%); }
         function filter(categoria, el) {
             document.querySelectorAll('.nav-btn, .category-btn').forEach(btn => btn.classList.remove('active'));
             if (el) el.classList.add('active');
-
-            if (categoria === 'all') {
-                document.getElementById('categoryTitle').innerText = "Catálogo Completo";
-                renderProdutos(produtos);
-            } else {
-                const filtrados = produtos.filter(p => p.cat === categoria);
-                const label = categoria === 'aparelhos' ? 'Aparelhos'
-                              : categoria === 'carregadores' ? 'Carregadores'
-                              : categoria === 'fones' ? 'Fones'
-                              : categoria.charAt(0).toUpperCase() + categoria.slice(1);
-                document.getElementById('categoryTitle').innerText = label;
-                renderProdutos(filtrados);
-            }
+            activeCategory = normalizeCategoryValue(categoria);
+            updateSubcategoryOptions(activeCategory);
+            applyFiltersAndRender();
         }
 
         function search() {
-            const term = document.getElementById('searchInput').value.toLowerCase();
-            const filtrados = produtos.filter(p => (p.nome || '').toLowerCase().includes(term));
-            renderProdutos(filtrados);
+            applyFiltersAndRender();
+        }
+
+        function filterBySubcategory(value) {
+            activeSubcategory = normalizeCategoryValue(value || 'all');
+            applyFiltersAndRender();
         }
 
         function openCheckout() {
@@ -1469,7 +1662,8 @@ header.hidden { transform: translateY(-100%); }
 
             // Render UI with loaded data (Firestore or defaults)
             renderPromocoes();
-            renderProdutos(produtos);
+            updateSubcategoryOptions(activeCategory);
+            applyFiltersAndRender();
             renderCarrinho();
             updatePaymentUI();
             
