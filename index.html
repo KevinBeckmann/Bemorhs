@@ -239,14 +239,18 @@ header.hidden { transform: translateY(-100%); }
     align-items: center;
     gap: 12px;
     width: auto;
+    flex: 1;
+    min-width: 0;
     flex-wrap: wrap;
 }
 
 .nav-buttons-container {
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: flex-end;
+    width: 100%;
     transition: opacity 0.22s ease, height 0.22s ease, margin 0.22s ease, padding 0.22s ease;
 }
 .nav-btn {
@@ -421,7 +425,7 @@ header.hidden { transform: translateY(-100%); }
 @media (max-width: 900px) {
     body { padding-bottom: 80px; }
     .header-flex { flex-direction: column; align-items: center; min-height: 62px; gap: 12px;}
-    .mobile-category-icons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 10px 0; }
+    .mobile-category-icons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 10px 0; }
     .nav-buttons-container { display: none; }
     .logo-img { height: 2.3rem;}
     .logo-title { font-size: 1.3rem;}
@@ -435,8 +439,10 @@ header.hidden { transform: translateY(-100%); }
     .controls-bar { display: grid; grid-template-columns: 1fr auto; gap: 10px; width: 100%; }
     .search-box { margin-left: 0; width: 100%; }
     .search-box input { width: 100%; }
+    .search-box, .subcategory-box { grid-column: 1 / -1; }
     .subcategory-box { width: 100%; }
     .subcategory-box select { min-width: 0; width: 100%; }
+    .btn-schedule { justify-self: end; }
     .products-container { grid-template-columns: 1fr; gap: 12px;}
     .card { padding: 12px; }
     .card-img { height: 140px; }
@@ -464,7 +470,7 @@ header.hidden { transform: translateY(-100%); }
     .btn-add { width: auto; }
     .logo-title { font-size: 2.2rem; }
     .logo-subtitle { font-size: 0.8rem; }
-    .mobile-category-icons { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+    .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
     .category-btn { padding: 10px; font-size: 1rem; }
 }
 
@@ -475,7 +481,7 @@ header.hidden { transform: translateY(-100%); }
     .logo-title { font-size: 1.8rem; }
     .logo-subtitle { font-size: 0.7rem; }
     .logo-img { height: 3.6rem; }
-    .mobile-category-icons { grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 5px 0; }
+    .mobile-category-icons { grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 5px 0; }
     .category-btn { padding: 8px; font-size: 0.9rem; }
     .controls-bar { gap: 8px; }
     .search-box input { width: 100%; }
@@ -566,9 +572,6 @@ header.hidden { transform: translateY(-100%); }
                     <button class="category-btn" onclick="filter('filtros', this)" title="Filtros de Ar">
                         <i class="fas fa-filter"></i>
                     </button>
-                    <button class="category-btn" onclick="filter('mangueiras', this)" title="Mangueiras">
-                        <i class="fas fa-wind"></i>
-                    </button>
                 </div>
                 <div class="controls-bar" id="controlsBar">
                     <div class="nav-buttons-container" id="navButtons">
@@ -576,8 +579,6 @@ header.hidden { transform: translateY(-100%); }
                         <button class="nav-btn" onclick="filter('compressores', this)">Compressores</button>
                         <button class="nav-btn" onclick="filter('pistolas', this)">Pistolas de Pintura</button>
                         <button class="nav-btn" onclick="filter('pecas', this)">Peças</button>
-                        <button class="nav-btn" onclick="filter('filtros', this)">Filtros de Ar</button>
-                        <button class="nav-btn" onclick="filter('mangueiras', this)">Mangueiras</button>
                     </div>
                     <div class="subcategory-box">
                         <i class="fas fa-sitemap" style="color: #888;"></i>
